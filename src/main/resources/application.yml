@@ -3,12 +3,9 @@ server:
 debug: true
 logging:
   level:
-    com.netflix: DEBUG
+    com.netflix: INFO
 zuul:
   routes:
-    route-frontend:
-      url: http://fsdemo-frontend:8080 # 指定的url
-      path: /**  # url对应的路径
     route-usercenter:
       url: http://fsdemo-usercenter:8081/usercenter # 指定的url
       path: /usercenter/**  # url对应的路径
@@ -27,3 +24,6 @@ zuul:
     route-priceservice:
       url: http://fsdemo-priceservice:8083/priceservice # 指定的url
       path: /priceservice/**  # url对应的路径
+    route-frontend:
+      url: http://fsdemo-frontend:8080 # 指定的url
+      path: /**  # url对应的路径
