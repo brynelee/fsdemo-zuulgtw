@@ -1,0 +1,29 @@
+server:
+  port: 8060
+debug: true
+logging:
+  level:
+    com.netflix: DEBUG
+zuul:
+  routes:
+    route-frontend:
+      url: http://fsdemo-frontend:8080 # 指定的url
+      path: /**  # url对应的路径
+    route-usercenter:
+      url: http://fsdemo-usercenter:8081/usercenter # 指定的url
+      path: /usercenter/**  # url对应的路径
+    route-authsrv-oauth:
+      url: http://fsdemo-authsrv:8084/oauth # 指定的url
+      path: /oauth/**  # url对应的路径
+    route-authsrv-auth:
+      url: http://fsdemo-authsrv:8084/auth # 指定的url
+      path: /auth/**  # url对应的路径
+    route-authsrv-custom:
+      url: http://fsdemo-authsrv:8084/custom # 指定的url
+      path: /custom/**  # url对应的路径
+    route-transactionagentservice:
+      url: http://transactionagentservice:8082/tas # 指定的url
+      path: /tas/**  # url对应的路径
+    route-priceservice:
+      url: http://fsdemo-priceservice:8083/priceservice # 指定的url
+      path: /priceservice/**  # url对应的路径
